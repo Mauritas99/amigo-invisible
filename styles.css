@@ -39,6 +39,7 @@ input:focus{
     width: 100vw;
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 .container-titulo{
     height: 35vh;
@@ -170,10 +171,10 @@ input:focus{
     transform: scale(1.02);
     transition: transform 0.3s;
 }
-.boton-reiniciar:disabled{
+button:disabled{
     background-color: var(--gris);
 }
-.boton-reiniciar:disabled:hover{
+button:disabled:hover{
     transform: scale(1);
     cursor: not-allowed;
 }
@@ -189,3 +190,81 @@ input:focus{
     color: var(--gris);
     cursor: default;
 }
+
+/* Tarjeta ganador */
+
+.nombre-ganador {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    width: 220px;
+    height: 300px;
+    font-family: "Jost", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background-color: var(--purpura);
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  
+  .presentacion-ganador {
+    top: 0;
+    position: absolute;
+    background-color: var(--blanco);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  
+  .nombre-ganador:hover .presentacion-ganador {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-80deg);
+    transform: rotatey(-80deg);
+  }
+  
+  .nombre-ganador > p,.presentacion-ganador > p {
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  .nombre-ganador.oculto{
+    display: none;
+  }
+  .desenfoque{
+    filter: blur(5px);
+  }

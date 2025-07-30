@@ -9,7 +9,9 @@
 // Variables globales
 
 let participantes = [];
-let botonReinicio = document.querySelector(".boton-reiniciar");
+let nombreGanador = document.getElementById("nombre-ganador");
+let tarjetaGanador = document.querySelector(".nombre-ganador");
+
 
 function obtenerNombre(){
     let nombre = document.querySelector("input").value;
@@ -17,8 +19,8 @@ function obtenerNombre(){
     if (nombre != ""){
         participantes.push(nombre);
         // Verificar estado de boton "Reinciar"
-        if(botonReinicio.hasAttribute("disabled")){
-            botonReinicio.disabled = false;
+        if(document.querySelector(".boton-reiniciar").hasAttribute("disabled")){
+            habilitarBtn(".boton-reiniciar");
         }
         document.querySelector("input").value = "";
         actualizarTextoDin();
@@ -41,13 +43,42 @@ function SortearAmigo(){
     // 4. Mostrar quien es el ganador.
 
     if (participantes.length > 2){
-        numeroAleatorio = Math.floor(Math.random() * participantes.length) + 1;
+        numeroAleatorio = Math.floor(Math.random() * participantes.length);
         participanteGanador = participantes[numeroAleatorio];
-        
+
+        nombreGanador.innerHTML = participanteGanador;
+        tarjetaGanador.classList.remove("oculto");
+        añadirDesenfoque(".container-juego");
+        añadirDesenfoque(".container-titulo");
+
     } else{
         alert(`Porfavor, agrega ${3 - participantes.length} ${participantes.length == 2 ? "amigo" : "amigos"} mas para poder jugar!`);
     }
 }
 function reiniciarJuego(){
-    alert("Espera wachin!");
+    participantes = [];
+    document.querySelector("input").value = "";
+    actualizarTextoDin();
+    habilitarBtn(".boton-jugar");
+    deshabilitarBtn(".boton-reiniciar");
+}
+
+function quitarResultado(){
+    tarjetaGanador.classList.add("oculto");
+    quitarDesenfoque(".container-juego");
+    quitarDesenfoque(".container-titulo");
+    deshabilitarBtn(".boton-jugar");
+}
+
+function añadirDesenfoque(clase){
+    document.querySelector(clase).classList.add("desenfoque");
+}
+function quitarDesenfoque(clase){
+    document.querySelector(clase).classList.remove("desenfoque");
+}
+function habilitarBtn(clase){
+    document.querySelector(clase).disabled = false;
+}
+function deshabilitarBtn(clase){
+    document.querySelector(clase).disabled = true;
 }
