@@ -10,6 +10,7 @@
 </p>
 <hr>
 <h2>¿Como jugar?</h2>
+<h3><a href="https://mauritas99.github.io/amigo-invisible/">Link para jugar</a></h3>
 <p>La interfaz principal es muy sencilla e intuitiva, esta compuesta por:</p>
 <ul>
   <li>Titulo e imagen decorativas.</li>
