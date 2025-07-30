@@ -1,0 +1,143 @@
+/* Variables */
+
+:root{
+    --purpura:#687FE5;
+    --blanco:#f4f4f4;
+    --azul:#0B1D51;
+    --naranja:#EB5B00;
+    --gris:#7A7A73;
+}
+
+/* Fuentes */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DynaPuff:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Etiquetas */
+body{
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    margin: 0;
+    overflow-x: hidden;
+}
+input{
+    width: 400px;
+    height: 40px;
+    border-radius: 22px 0px 0px 22px;
+    font-family: "Jost", sans-serif;
+    font-size: 1.1rem;
+    padding-left: 2%;
+    border: 2px solid var(--azul);
+}
+input:focus{
+    outline: 1.5px solid var(--naranja);
+}
+/* Clases */
+
+.container-principal{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+.container-titulo{
+    height: 35vh;
+    width: 100%;
+    padding: 30px 10px;
+    background-color: var(--purpura);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.container-juego{
+    height: 65vh;
+    width: 100%;
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+}
+.input-container{
+    width: 35%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+.titulo{
+    font-family: "DynaPuff", system-ui;
+    color:var(--blanco);
+    font-weight: 800;
+    font-size: 4.6rem;
+}
+.imagen-titulo{
+    height: 500px;
+    width: 500px;
+}
+.subtitulo{
+    font-family: "Jost", sans-serif;
+    font-weight: 800;
+    font-size: 2.1rem;
+    color: var(--purpura);
+    margin-top: -40px;
+}
+.boton-añadir{
+    height:auto;
+    width: 100px;
+    text-align: center;
+    font-family: "Jost", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 0px 22px 22px 0px;
+    background-color:var(--gris) ;
+    color:var(--blanco);
+    border: 1.5px solid var(--azul);
+    cursor: pointer;
+}
+.boton-añadir:hover{
+    background-color: #5A5A53;
+}
+.boton-añadir:active{
+    transform: scale(0.98);
+}
+.boton-jugar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: fit-content;
+    width: 280px;
+    background-color: var(--naranja);
+    border-radius: 25px;
+    padding: 12px 35px;
+    column-gap: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid black;
+}
+.boton-jugar:hover{
+    transform: scale(1.02);
+    transition: transform 0.3s;
+}
+.boton-jugar > span{
+    font-family: "Jost", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--blanco);
+    transform: translateY(1px);
+}
+.img-play{
+    height: 30px;
+    width: 30px;
+}
+
+/* Texto dinámico */
+
+#texto-dinamico{
+    font-family: "Jost", sans-serif;
+    font-size: 1.2rem;
+    color: var(--gris);
+    cursor: default;
+}
