@@ -60,6 +60,18 @@ input:focus{
     align-items: center;
     row-gap: 15px;
 }
+.contenedor-texto-dinamico{
+    width: 400px;
+    word-break: break-word;
+}
+.container-botones-jugar{
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
 .input-container{
     width: 35%;
     height: fit-content;
@@ -107,7 +119,7 @@ input:focus{
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    height: fit-content;
+    height: 100%;
     width: 280px;
     background-color: var(--naranja);
     border-radius: 25px;
@@ -132,7 +144,43 @@ input:focus{
     height: 30px;
     width: 30px;
 }
-
+.boton-reiniciar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 150px;
+    background-color: var(--naranja);
+    border-radius: 25px;
+    padding: 12px 5px;
+    column-gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid black;
+}
+.boton-reiniciar > span{
+    font-family: "Jost", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--blanco);
+    transform: translateY(1px);
+}
+.boton-reiniciar:hover{
+    transform: scale(1.02);
+    transition: transform 0.3s;
+}
+.boton-reiniciar:disabled{
+    background-color: var(--gris);
+}
+.boton-reiniciar:disabled:hover{
+    transform: scale(1);
+    cursor: not-allowed;
+}
+.img-restart{
+    height: 32px;
+    width: 32px;
+}
 /* Texto dinámico */
 
 #texto-dinamico{
